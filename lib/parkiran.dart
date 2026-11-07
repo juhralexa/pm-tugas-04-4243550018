@@ -31,7 +31,7 @@ class Parkiran {
       throw ParkirPenuh(kapasitas);
     }
     _parkir.add(k);
-    _kejadian.add('MASUK $k (sisa $sisa)');
+    _kejadian.add('Masuk $k (sisa $sisa)');
   }
 
   /// Palang keluar: hitung biaya, tambah pendapatan, kirim event.
@@ -42,9 +42,12 @@ class Parkiran {
     }
     final bayar = k.biaya(waktuKeluar);
     _pendapatan += bayar;
-    _kejadian.add('KELUAR $k bayar Rp$bayar');
+    _kejadian.add('Keluar $k bayar ${rupiah(bayar)}');
     return bayar;
   }
 
   Future<void> tutup() => _kejadian.close();
 }
+
+String rupiah(int n) =>
+    'Rp${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'), (m) => '.')}';

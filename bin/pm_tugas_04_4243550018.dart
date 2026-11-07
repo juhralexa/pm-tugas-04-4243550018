@@ -34,5 +34,5 @@ Future<void> main() async {
   }
 
   await parkiran.tutup(); 
-  print('Pendapatan: Rp${parkiran.pendapatan}');
+    print('Pendapatan: ${rupiah(parkiran.pendapatan)}');
 }

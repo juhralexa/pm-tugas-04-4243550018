@@ -1,4 +1,3 @@
-/// Kerangka semua kendaraan yang masuk area parkir FMIPA.
 abstract class Kendaraan {
   final String plat;
   final DateTime waktuMasuk;
