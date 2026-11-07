@@ -45,7 +45,7 @@ classDiagram
 ```
 
 ## Keluaran Program
-![Keluaran program](screenshot.png)
+![Keluaran program](screenshot/screenshot.png)
 
 ## Penjelasan
 Enkapsulasi diterapkan pada kelas `Parkiran`: daftar kendaraan `_parkir`, `_pendapatan`, dan `_kejadian` bersifat privat, sehingga hanya bisa diubah lewat method `masuk` dan `keluar`. Akses dari luar disediakan lewat getter `sisa` dan `pendapatan`. Polimorfisme terlihat pada `List<Kendaraan>` yang berisi `Motor`, `Mobil`, dan `MobilMember`; pemanggilan `biaya()` menjalankan versi milik objek aslinya, termasuk diskon 50% dari mixin `Berlangganan`. Async diterapkan pada `masuk` dan `keluar` yang memakai `Future.delayed` untuk mensimulasikan palang otomatis dan dipanggil dengan `await` di `main`. Setiap kejadian dipancarkan lewat `StreamController.broadcast()` dan ditampilkan oleh listener di layar pos jaga. Kapasitas penuh ditangani dengan exception kustom `ParkirPenuh`.
